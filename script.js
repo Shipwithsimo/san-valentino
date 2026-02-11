@@ -1,3 +1,22 @@
+/**
+ * San Valentino - Interactive Valentine's Day Webpage
+ * Main JavaScript
+ *
+ * @author Shipwithsimo
+ * @version 1.0
+ * @license MIT
+ * @see https://github.com/shipwithsimo
+ *
+ * Features:
+ * - Interactive "No" button that evades cursor with intelligent positioning
+ * - Scaling "Yes" button that grows with each "No" click attempt
+ * - Dynamic message feedback system
+ * - Punch overlay easter egg after multiple attempts
+ * - Responsive design with mobile/desktop optimizations
+ * - Accessibility support (reduced motion, screen readers)
+ * - Audio unlock system for iOS Safari compatibility
+ */
+
 const NO_MESSAGES_IT = [
     "Ne sei davvero sicura?",
     "Pensaci ancora un secondo...",

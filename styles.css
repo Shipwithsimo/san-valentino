@@ -1,3 +1,17 @@
+/*
+ * San Valentino - Interactive Valentine's Day Webpage
+ * Stylesheet: Main Styles
+ *
+ * Created by: Shipwithsimo
+ * GitHub: https://github.com/shipwithsimo
+ *
+ * Features:
+ * - Elegant romantic design with falling hearts animation
+ * - Responsive layout for mobile and desktop
+ * - Custom button interactions and hover effects
+ * - Accessibility-friendly with reduced motion support
+ */
+
 :root {
     --bg-rose-1: #fff3ef;
     --bg-rose-2: #ffdcdc;
