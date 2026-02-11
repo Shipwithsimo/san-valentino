@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Vuoi essere il mio San Valentino?</title>
+    <meta name="description" content="Una piccola sorpresa romantica in stile elegante per San Valentino.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="falling-hearts falling-hearts-back" aria-hidden="true">
+        <span class="heart" style="--left: 3%; --size: 10px; --duration: 12.2s; --delay: -6.4s; --drift: -26px; --scale: 0.9;"></span>
+        <span class="heart" style="--left: 12%; --size: 13px; --duration: 10.8s; --delay: -1.5s; --drift: 31px; --scale: 1;"></span>
+        <span class="heart" style="--left: 20%; --size: 9px; --duration: 13.4s; --delay: -4.1s; --drift: -20px; --scale: 0.88;"></span>
+        <span class="heart" style="--left: 29%; --size: 15px; --duration: 11.2s; --delay: -7.5s; --drift: 19px; --scale: 1.06;"></span>
+        <span class="heart" style="--left: 36%; --size: 11px; --duration: 12.8s; --delay: -2.8s; --drift: -14px; --scale: 0.92;"></span>
+        <span class="heart" style="--left: 44%; --size: 12px; --duration: 10.6s; --delay: -5.4s; --drift: 26px; --scale: 0.96;"></span>
+        <span class="heart" style="--left: 54%; --size: 8px; --duration: 12.9s; --delay: -6.8s; --drift: -17px; --scale: 0.82;"></span>
+        <span class="heart" style="--left: 63%; --size: 14px; --duration: 11.5s; --delay: -3.3s; --drift: 32px; --scale: 1.02;"></span>
+        <span class="heart" style="--left: 72%; --size: 10px; --duration: 13.1s; --delay: -8.2s; --drift: -22px; --scale: 0.9;"></span>
+        <span class="heart" style="--left: 81%; --size: 16px; --duration: 11.8s; --delay: -4.9s; --drift: 24px; --scale: 1.08;"></span>
+        <span class="heart" style="--left: 89%; --size: 11px; --duration: 12.4s; --delay: -7.1s; --drift: -18px; --scale: 0.93;"></span>
+        <span class="heart" style="--left: 96%; --size: 9px; --duration: 10.9s; --delay: -2.1s; --drift: 20px; --scale: 0.84;"></span>
+    </div>
+    <div class="falling-hearts falling-hearts-front" aria-hidden="true">
+        <span class="heart" style="--left: 6%; --size: 14px; --duration: 8.6s; --delay: -5.9s; --drift: -30px; --scale: 1.02;"></span>
+        <span class="heart" style="--left: 16%; --size: 12px; --duration: 9.4s; --delay: -3.5s; --drift: 22px; --scale: 0.98;"></span>
+        <span class="heart" style="--left: 25%; --size: 17px; --duration: 8.8s; --delay: -7.2s; --drift: -19px; --scale: 1.12;"></span>
+        <span class="heart" style="--left: 34%; --size: 11px; --duration: 9.1s; --delay: -2.4s; --drift: 28px; --scale: 0.94;"></span>
+        <span class="heart" style="--left: 43%; --size: 15px; --duration: 8.9s; --delay: -6.6s; --drift: -24px; --scale: 1.04;"></span>
+        <span class="heart" style="--left: 52%; --size: 10px; --duration: 9.7s; --delay: -1.7s; --drift: 19px; --scale: 0.9;"></span>
+        <span class="heart" style="--left: 62%; --size: 16px; --duration: 8.5s; --delay: -4.3s; --drift: -17px; --scale: 1.1;"></span>
+        <span class="heart" style="--left: 71%; --size: 12px; --duration: 9.3s; --delay: -7.7s; --drift: 29px; --scale: 0.98;"></span>
+        <span class="heart" style="--left: 83%; --size: 14px; --duration: 8.7s; --delay: -3.1s; --drift: -21px; --scale: 1.03;"></span>
+        <span class="heart" style="--left: 92%; --size: 11px; --duration: 9.2s; --delay: -5.2s; --drift: 25px; --scale: 0.95;"></span>
+    </div>
+    <main class="layout">
+        <section class="invitation-card" aria-labelledby="main-title">
+            <p class="eyebrow">San Valentino</p>
+            <h1 id="main-title">Vuoi essere il mio San Valentino?</h1>
+            <p class="subtitle">Prometto una serata dolce, sorrisi sinceri e una dose extra di coccole.</p>
+
+            <div class="buttons">
+                <a class="yes-button" href="yes_page.html">Si, lo voglio</a>
+                <button class="no-button" type="button" onclick="handleNoClick()">Non lo so...</button>
+            </div>
+
+            <p id="no-feedback" class="sr-only" aria-live="polite"></p>
+
+            <figure class="media-card">
+                <img
+                    id="hero-gif-default"
+                    class="hero-gif is-visible"
+                    src="assets/cat-love.gif"
+                    width="320"
+                    height="303"
+                    alt="Gatto romantico"
+                    decoding="async"
+                    fetchpriority="high"
+                >
+                <img
+                    id="hero-gif-alert"
+                    class="hero-gif"
+                    src="assets/sanhap-cat.gif"
+                    width="165"
+                    height="294"
+                    alt=""
+                    aria-hidden="true"
+                    decoding="async"
+                >
+            </figure>
+
+            <p class="helper">Suggerimento: il pulsante giusto non prova a scappare.</p>
+        </section>
+    </main>
+    <div id="punch-overlay" class="punch-overlay" aria-hidden="true">
+        <img
+            class="punch-gif"
+            src="assets/Screenshot 2026-02-11 alle 09.31.59.gif"
+            width="1280"
+            height="720"
+            alt=""
+            aria-hidden="true"
+            decoding="async"
+        >
+    </div>
+    <audio
+        id="punch-audio"
+        preload="auto"
+        loop
+        src="assets/dbz-rapid-punches-sfx.mp3"
+    ></audio>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Lo sapevo che avresti detto si!</title>
+    <meta name="description" content="Pagina di conferma romantica per il tuo yes moment.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./yes_style.css">
+</head>
+<body>
+    <div class="falling-hearts falling-hearts-back" aria-hidden="true">
+        <span class="heart" style="--left: 5%; --size: 10px; --duration: 11.6s; --delay: -5.9s; --drift: -25px; --scale: 0.9;"></span>
+        <span class="heart" style="--left: 14%; --size: 13px; --duration: 10.9s; --delay: -2.3s; --drift: 29px; --scale: 1;"></span>
+        <span class="heart" style="--left: 23%; --size: 9px; --duration: 12.7s; --delay: -7.1s; --drift: -18px; --scale: 0.82;"></span>
+        <span class="heart" style="--left: 31%; --size: 15px; --duration: 11.3s; --delay: -3.8s; --drift: 21px; --scale: 1.05;"></span>
+        <span class="heart" style="--left: 40%; --size: 11px; --duration: 12.2s; --delay: -6.4s; --drift: -20px; --scale: 0.92;"></span>
+        <span class="heart" style="--left: 49%; --size: 12px; --duration: 10.7s; --delay: -1.9s; --drift: 24px; --scale: 0.97;"></span>
+        <span class="heart" style="--left: 58%; --size: 8px; --duration: 13.4s; --delay: -4.7s; --drift: -16px; --scale: 0.82;"></span>
+        <span class="heart" style="--left: 67%; --size: 14px; --duration: 11.1s; --delay: -8.3s; --drift: 30px; --scale: 1.03;"></span>
+        <span class="heart" style="--left: 76%; --size: 10px; --duration: 12.5s; --delay: -5.2s; --drift: -23px; --scale: 0.9;"></span>
+        <span class="heart" style="--left: 84%; --size: 16px; --duration: 11.8s; --delay: -2.6s; --drift: 20px; --scale: 1.08;"></span>
+        <span class="heart" style="--left: 93%; --size: 9px; --duration: 10.6s; --delay: -7.6s; --drift: -14px; --scale: 0.86;"></span>
+    </div>
+    <div class="falling-hearts falling-hearts-front" aria-hidden="true">
+        <span class="heart" style="--left: 8%; --size: 14px; --duration: 8.4s; --delay: -6.8s; --drift: -28px; --scale: 1.02;"></span>
+        <span class="heart" style="--left: 18%; --size: 12px; --duration: 9.1s; --delay: -3.2s; --drift: 22px; --scale: 0.96;"></span>
+        <span class="heart" style="--left: 28%; --size: 16px; --duration: 8.7s; --delay: -5.4s; --drift: -20px; --scale: 1.11;"></span>
+        <span class="heart" style="--left: 38%; --size: 10px; --duration: 9.6s; --delay: -2.7s; --drift: 27px; --scale: 0.9;"></span>
+        <span class="heart" style="--left: 50%; --size: 15px; --duration: 8.9s; --delay: -7.4s; --drift: -16px; --scale: 1.05;"></span>
+        <span class="heart" style="--left: 61%; --size: 11px; --duration: 9.3s; --delay: -4.5s; --drift: 26px; --scale: 0.95;"></span>
+        <span class="heart" style="--left: 72%; --size: 17px; --duration: 8.5s; --delay: -6.1s; --drift: -24px; --scale: 1.1;"></span>
+        <span class="heart" style="--left: 83%; --size: 13px; --duration: 9.2s; --delay: -1.8s; --drift: 19px; --scale: 1;"></span>
+        <span class="heart" style="--left: 94%; --size: 11px; --duration: 8.8s; --delay: -5.7s; --drift: -21px; --scale: 0.93;"></span>
+    </div>
+    <main class="yes-layout">
+        <section class="yes-card" aria-labelledby="yes-title">
+            <p class="eyebrow">Missione Compiuta</p>
+            <h1 id="yes-title" class="header_text">Lo sapevo che avresti detto si!</h1>
+            <p class="subtitle">Adesso preparati: questa storia diventa ufficialmente la piu dolce dell'anno.</p>
+            <figure class="media-card">
+                <img
+                    src="assets/giphy.gif"
+                    width="320"
+                    height="303"
+                    alt="Gatto romantico innamorato"
+                    decoding="async"
+                    fetchpriority="high"
+                >
+            </figure>
+            <a class="secondary-link" href="index.html">Rivedi la sorpresa</a>
+        </section>
+    </main>
+    <canvas id="confetti-canvas"></canvas>
+    <script>
+        // Confetti celebration effect
+        const canvas = document.getElementById('confetti-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '9999';
+
+        const confettiColors = ['#be2f4c', '#e7b567', '#ff6b9d', '#ffd700', '#ff1493', '#ff69b4'];
+        const confettiCount = 150;
+        const gravity = 0.5;
+        const terminalVelocity = 5;
+        const drag = 0.075;
+        const confetti = [];
+
+        class ConfettiPiece {
+            constructor() {
+                this.reset();
+                this.y = Math.random() * canvas.height - canvas.height;
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = -20;
+                this.w = Math.random() * 10 + 5;
+                this.h = Math.random() * 6 + 3;
+                this.color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                this.vx = Math.random() * 4 - 2;
+                this.vy = Math.random() * 3 - 1;
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = Math.random() * 10 - 5;
+                this.opacity = 1;
+            }
+
+            update() {
+                this.vy += gravity;
+                this.vy = Math.min(this.vy, terminalVelocity);
+                this.vx *= (1 - drag);
+                this.x += this.vx;
+                this.y += this.vy;
+                this.rotation += this.rotationSpeed;
+
+                if (this.y > canvas.height + 20) {
+                    this.opacity -= 0.05;
+                    if (this.opacity <= 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                ctx.translate(this.x, this.y);
+                ctx.rotate((this.rotation * Math.PI) / 180);
+                ctx.fillStyle = this.color;
+                ctx.fillRect(-this.w / 2, -this.h / 2, this.w, this.h);
+                ctx.restore();
+            }
+        }
+
+        // Create initial confetti
+        for (let i = 0; i < confettiCount; i++) {
+            confetti.push(new ConfettiPiece());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = confetti.length - 1; i >= 0; i--) {
+                const piece = confetti[i];
+                if (!piece.update()) {
+                    confetti.splice(i, 1);
+                } else {
+                    piece.draw();
+                }
+            }
+
+            if (confetti.length > 0) {
+                requestAnimationFrame(animate);
+            } else {
+                // Fade out canvas
+                canvas.style.transition = 'opacity 1s';
+                canvas.style.opacity = '0';
+                setTimeout(() => canvas.remove(), 1000);
+            }
+        }
+
+        // Start animation after a short delay
+        setTimeout(() => {
+            animate();
+        }, 300);
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>

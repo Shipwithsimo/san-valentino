@@ -1,0 +1,43 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroBg" x1="64" y1="52" x2="736" y2="468" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7EE" />
+      <stop offset="1" stop-color="#FFE2E2" />
+    </linearGradient>
+    <radialGradient id="heroGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 258) rotate(90) scale(192 278)">
+      <stop stop-color="#FFF3D8" />
+      <stop offset="1" stop-color="#FFD6DC" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="heroHeart" x1="413" y1="84" x2="413" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D94A68" />
+      <stop offset="1" stop-color="#A5213D" />
+    </linearGradient>
+    <filter id="softShadow" x="154" y="58" width="520" height="434" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+      <feOffset dy="14" />
+      <feGaussianBlur stdDeviation="16" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.4549 0 0 0 0 0.10196 0 0 0 0 0.19607 0 0 0 0.26 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+    </filter>
+  </defs>
+
+  <rect x="12" y="12" width="776" height="496" rx="30" fill="url(#heroBg)" />
+  <rect x="12" y="12" width="776" height="496" rx="30" stroke="#EFC7CB" stroke-width="2" />
+  <ellipse cx="400" cy="258" rx="290" ry="192" fill="url(#heroGlow)" />
+
+  <g opacity="0.5">
+    <circle cx="136" cy="152" r="9" fill="#F4C3CC" />
+    <circle cx="662" cy="118" r="7" fill="#F2B88F" />
+    <circle cx="696" cy="358" r="6" fill="#F0BECC" />
+    <circle cx="118" cy="386" r="11" fill="#F8D2A9" />
+  </g>
+
+  <g filter="url(#softShadow)">
+    <path d="M400 455C360 420 300 374 262 330C224 286 206 242 206 199C206 132 257 84 319 84C354 84 389 99 413 125C437 99 472 84 507 84C569 84 620 132 620 199C620 242 602 286 564 330C526 374 466 420 426 455C419 461 407 461 400 455Z" fill="url(#heroHeart)" />
+  </g>
+
+  <path d="M615 308C597 292 580 278 580 253C580 233 595 220 612 220C621 220 630 224 636 232C642 224 651 220 660 220C677 220 692 233 692 253C692 278 675 292 657 308C654 311 649 311 646 308L636 299L626 308C623 311 618 311 615 308Z" fill="#EDB66B" />
+  <path d="M136 265C120 251 106 239 106 218C106 200 120 188 136 188C146 188 155 192 161 199C167 192 176 188 186 188C202 188 216 200 216 218C216 239 202 251 186 265C183 267 179 267 176 265L161 252L146 265C143 267 139 267 136 265Z" fill="#ECA0B1" />
+</svg>
